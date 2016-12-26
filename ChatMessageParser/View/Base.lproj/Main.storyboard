@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Wse-ox-deB">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--Parse View Controller-->
+        <scene sceneID="0qs-iq-cyG">
+            <objects>
+                <viewController id="Wse-ox-deB" customClass="ParseViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="OYe-SR-ule"/>
+                        <viewControllerLayoutGuide type="bottom" id="eVE-7S-spp"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="vHU-wN-OFc">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="0jQ-FR-LC9">
+                                <rect key="frame" x="20" y="66" width="560" height="144"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="144" id="UHq-DH-GtE"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <button opaque="NO" alpha="0.34999999999999998" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AqS-2T-JU8">
+                                <rect key="frame" x="242" y="232" width="115" height="39"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="115" id="3Ef-aY-djg"/>
+                                    <constraint firstAttribute="height" constant="39" id="o40-3P-lLL"/>
+                                </constraints>
+                                <state key="normal" title="Parse">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="buttonClicked:" destination="Wse-ox-deB" eventType="touchUpInside" id="rSM-fB-YlH"/>
+                                </connections>
+                            </button>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="va0-7c-p5O">
+                                <rect key="frame" x="282" y="411" width="37" height="37"/>
+                            </activityIndicatorView>
+                            <textView hidden="YES" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="ysO-YP-RMO">
+                                <rect key="frame" x="20" y="293" width="560" height="287"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="eVE-7S-spp" firstAttribute="top" secondItem="ysO-YP-RMO" secondAttribute="bottom" constant="20" id="7kD-qy-LG4"/>
+                            <constraint firstItem="0jQ-FR-LC9" firstAttribute="top" secondItem="OYe-SR-ule" secondAttribute="bottom" constant="46" id="NzC-sh-IQF"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="0jQ-FR-LC9" secondAttribute="trailing" id="PFt-fR-AQ5"/>
+                            <constraint firstItem="AqS-2T-JU8" firstAttribute="centerX" secondItem="vHU-wN-OFc" secondAttribute="centerX" id="Y1u-kd-rs4"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="ysO-YP-RMO" secondAttribute="trailing" id="Z7M-05-dgH"/>
+                            <constraint firstItem="ysO-YP-RMO" firstAttribute="top" secondItem="AqS-2T-JU8" secondAttribute="bottom" constant="22" id="cUO-PU-idJ"/>
+                            <constraint firstItem="va0-7c-p5O" firstAttribute="top" secondItem="AqS-2T-JU8" secondAttribute="bottom" constant="140" id="cfs-uN-htt"/>
+                            <constraint firstItem="va0-7c-p5O" firstAttribute="centerX" secondItem="vHU-wN-OFc" secondAttribute="centerX" id="i0Y-58-m5o"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="ysO-YP-RMO" secondAttribute="leading" id="jqJ-yg-1kc"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="0jQ-FR-LC9" secondAttribute="leading" id="sei-Lq-hhe"/>
+                            <constraint firstItem="AqS-2T-JU8" firstAttribute="top" secondItem="0jQ-FR-LC9" secondAttribute="bottom" constant="22" id="xXC-Ci-a8L"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="activityIndicator" destination="va0-7c-p5O" id="kRT-qC-Ju1"/>
+                        <outlet property="btnParse" destination="AqS-2T-JU8" id="don-hA-YxT"/>
+                        <outlet property="textView" destination="0jQ-FR-LC9" id="1Od-0g-etz"/>
+                        <outlet property="textViewJson" destination="ysO-YP-RMO" id="iGe-ib-d1S"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="RSe-Nm-9Sn" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="280" y="337"/>
+        </scene>
+    </scenes>
+</document>
